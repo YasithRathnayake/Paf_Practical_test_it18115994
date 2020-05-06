@@ -61,7 +61,7 @@ public class PaymentAPI extends HttpServlet {
 
 		Map paras = getParasMap(request);
 		String output = PayObj.updatePaymentDetails(paras.get("paymentIdSave").toString(), paras.get("paidAmount").toString(),
-				paras.get("paymentDescription").toString(), paras.get("Hid").toString(), paras.get("userId").toString());
+				paras.get("paymentDescription").toString().replace("+", " ").replace("%2C", ",").replace("%3A", ":"), paras.get("Hid").toString(), paras.get("userId").toString());
 		response.getWriter().write(output);
 
 	}
