@@ -69,7 +69,7 @@ if(request.getParameter("hidItemIdDelete")!= null){
 			
 
 			<div class="form-group">
-				<label for="pwd">Hospital ID :</label> <input type="date"
+				<label for="pwd">Hospital ID :</label> <input type="text"
 					class="form-control" id="Hid" name="Hid">
 			</div>
 

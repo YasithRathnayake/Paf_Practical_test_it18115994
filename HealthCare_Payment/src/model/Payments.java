@@ -65,7 +65,7 @@ public class Payments {
 				return "Error while connecting to the database for reading.";
 			}
 			// Prepare the html table to be displayed
-			output = "<table border=\'1\'><tr><th>Payment ID</th><th>Paid Amount</th><th>Payment Description</th><th>Hospital ID</th><th>User ID</th><th>Update</th><th>Remove</th></tr>";
+			output = "<table border=\"1\"><tr><th>Payment ID</th><th>Paid Amount</th><th>Payment Description</th><th>Hospital ID</th><th>User ID</th><th>Update</th><th>Remove</th></tr>";
 			String query = "select * from payment_details";
 			Statement stmt = (Statement) con.createStatement();
 			ResultSet rs = ((java.sql.Statement) stmt).executeQuery(query);
@@ -79,8 +79,8 @@ public class Payments {
 				String userId = rs.getString("userId");
 
 				// Add into the html table
-				output += "<tr><td><input id=\"paymentIdUpdate\" value=\"" + paymentId
-						+ "\" name=\"paymentIdUpdate\" type=\"hidden\"> " + paymentId + " </td>";
+				output += "<tr><td><input id=\'paymentIdUpdate\' value=\"" + paymentId
+						+ "\" name=\'paymentIdUpdate\' type=\"hidden\"> " + paymentId + " </td>";
 
 	//			output += "<tr><td>" + paymentId + "</td>";
 				output += "<td>" + paidAmount + "</td>";
@@ -88,9 +88,9 @@ public class Payments {
 				output += "<td>" + Hid + "</td>";
 				output += "<td>" + userId + "</td>";
 				// buttons
-				output += "<td><input name=\"btnUpdate\" type=\"button\"value=\"Update\" class=\"btnUpdate btn btn-secondary\"></td>"
-						+ "<td><input name=\"btnRemove\" data-appid='" + paymentId
-						+ "'type=\"submit\" value=\"Remove\"class=\"btnRemove btn btn-danger\"></td></tr>";
+				output += "<td><input name=\'btnUpdate\' type=\'button\'value=\'Update\' class=\'btnUpdate btn btn-secondary\'></td>"
+						+ "<td><input name=\'btnRemove\' data-appid='" + paymentId
+						+ "'type=\'submit\' value=\'Remove\'class=\'btnRemove btn btn-danger\'></td></tr>";
 			}
 			con.close();
 			// Complete the html table
