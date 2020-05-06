@@ -79,8 +79,8 @@ public class Payments {
 				String userId = rs.getString("userId");
 
 				// Add into the html table
-				output += "<tr><td><input id=\'paymentIdUpdate\' value=\"" + paymentId
-						+ "\" name=\'paymentIdUpdate\' type=\"hidden\"> " + paymentId + " </td>";
+				output += "<tr><td><input id=\'paymentIdUpdate\' value=\'" + paymentId
+						+ "\' name=\'paymentIdUpdate\' type=\'hidden\'> " + paymentId + " </td>";
 
 	//			output += "<tr><td>" + paymentId + "</td>";
 				output += "<td>" + paidAmount + "</td>";

@@ -157,6 +157,12 @@ function validateItemForm() {
 		return "Please Enter Paid Amount";
 	} 
 	
+	// is numerical value
+	var tmppaidAmount = $("#paidAmount").val().trim();
+	if (!$.isNumeric(tmppaidAmount)) {
+		return "Insert Only Numbers for Paid Amount";
+	}
+	
 	if ($("#paymentDescription").val().trim() == "") {  
 		
 		return "Please Enter Payment Description";
@@ -167,9 +173,21 @@ function validateItemForm() {
 		return "Please Enter Hospital ID";
 	} 
 	
+	// is numerical value
+	var tmpHid = $("#Hid").val().trim();
+	if (!$.isNumeric(tmpHid)) {
+		return "Insert Only Numbers for Hospital ID";
+	}
+	
 	if ($("#userId").val().trim() == "") {  
 
 		return "Please Enter User ID ";
+	}
+	
+	// is numerical value
+	var tmpuserId = $("#userId").val().trim();
+	if (!$.isNumeric(tmpuserId)) {
+		return "Insert Only Numbers for User ID";
 	}
 	
 	return true; 
